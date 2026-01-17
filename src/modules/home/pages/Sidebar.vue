@@ -12,6 +12,7 @@ import {
   SidebarTrigger,
 } from "@/components/ui/sidebar"
 import useSystem from "../hooks/useSystem"
+import ModeToggle from "@/components/ModeToggle.vue"
 
 // Custom
 const {
@@ -24,7 +25,7 @@ const {
   <SidebarProvider>
     <AppSidebar />
     <SidebarInset>
-      <header class="flex h-16 shrink-0 items-center gap-2">
+      <header class="flex h-16 shrink-0 justify-between items-center gap-2">
         <div class="flex items-center gap-2 px-4">
           <SidebarTrigger class="-ml-1" />
           <Separator
@@ -34,6 +35,9 @@ const {
           <div>
             <h1>{{ empresa?.Abreviado }}</h1>
           </div>
+        </div>
+        <div class="mr-4">
+            <ModeToggle />
         </div>
       </header>
       <div class="flex flex-1 flex-col gap-4 p-4 pt-0">

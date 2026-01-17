@@ -25,6 +25,8 @@
     "vue-sonner": "^2.0.9"
   },
   "devDependencies": {
+    "@iconify-json/radix-icons": "^1.2.6",
+    "@iconify/vue": "^5.0.0",
     "@types/node": "^25.0.3",
     "@vitejs/plugin-vue": "^6.0.1",
     "@vue/tsconfig": "^0.8.1",

@@ -29,6 +29,7 @@ import {
   useSidebar,
 } from '@/components/ui/sidebar'
 import useAuth from "@/modules/auth/hooks/useAuth"
+import ModeToggle from "./ModeToggle.vue"
 
 const {
   onLogout,
@@ -103,10 +104,6 @@ const { isMobile } = useSidebar()
             <DropdownMenuItem>
               <CreditCard />
               Billing
-            </DropdownMenuItem>
-            <DropdownMenuItem>
-              <Bell />
-              Notifications
             </DropdownMenuItem>
           </DropdownMenuGroup>
           <DropdownMenuSeparator />
