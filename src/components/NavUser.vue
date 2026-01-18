@@ -29,7 +29,6 @@ import {
   useSidebar,
 } from '@/components/ui/sidebar'
 import useAuth from "@/modules/auth/hooks/useAuth"
-import ModeToggle from "./ModeToggle.vue"
 
 const {
   onLogout,

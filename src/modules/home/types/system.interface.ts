@@ -1,3 +1,5 @@
+import type { LucideIcon } from "lucide-vue-next"
+
 export interface Empresa {
   CodEmpresa: string
   RUCPrivado: string
@@ -45,4 +47,18 @@ export interface Empresa {
   PCS_Fecha: string
   Dep_Usuario: string
   Sucursal: string
+}
+
+export interface Menu {
+  Sistema: string
+  botonesWeb: string
+  componente?: string
+  estado: string
+  icono?: LucideIcon
+  id: string
+  menus_id: string | null
+  nombre?: string
+  paneles: string
+  ruta: string,
+  children?: Menu[]
 }

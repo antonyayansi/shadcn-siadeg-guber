@@ -12,8 +12,10 @@ import Sidebar from '../pages/Sidebar.vue';
 
 const {
     checkEmpresa,
-    empresa
+    empresa,
+    getMenus
 } = useSystem();
 
 checkEmpresa();
+getMenus();
 </script>

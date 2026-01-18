@@ -7,7 +7,26 @@ const baseApi = axios.create({
     },
     params: {
         token: localStorage.getItem('x0-token') || '',
+        periodo: localStorage.getItem('x0-periodo') || new Date().getFullYear().toString(),
     }
 });
+
+//interceptor
+baseApi.interceptors.response.use(
+    async response => {
+        if (response.data[0]?.idd == '*') {
+            localStorage.removeItem('x0-jwt');
+            localStorage.removeItem('x0-token');
+            localStorage.removeItem('x0-periodo');
+            localStorage.removeItem('x0-empresa');
+            localStorage.removeItem('x0-menus')
+            localStorage.removeItem('x0-modulos')
+            localStorage.removeItem('x0-raw-menus')
+            window.location.href = '/login'
+        }
+        return response
+    }
+)
+
 
 export default baseApi;

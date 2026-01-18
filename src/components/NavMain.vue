@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import type { LucideIcon } from "lucide-vue-next"
 import { ChevronRight } from "lucide-vue-next"
 import {
   Collapsible,
@@ -16,46 +15,37 @@ import {
   SidebarMenuSubButton,
   SidebarMenuSubItem,
 } from '@/components/ui/sidebar'
+import type { Menu } from "@/modules/home/types/system.interface";
 
 defineProps<{
-  items: {
-    title: string
-    url: string
-    icon?: LucideIcon
-    isActive?: boolean
-    items?: {
-      title: string
-      url: string
-    }[]
-  }[]
+  items: Menu[]
 }>()
 </script>
 
 <template>
   <SidebarGroup>
-    <SidebarGroupLabel>Platform</SidebarGroupLabel>
+    <SidebarGroupLabel>Módulos</SidebarGroupLabel>
     <SidebarMenu>
       <Collapsible
         v-for="item in items"
-        :key="item.title"
+        :key="item.botonesWeb"
         as-child
-        :default-open="item.isActive"
         class="group/collapsible"
       >
         <SidebarMenuItem>
           <CollapsibleTrigger as-child>
-            <SidebarMenuButton :tooltip="item.title">
-              <component :is="item.icon" v-if="item.icon" />
-              <span>{{ item.title }}</span>
+            <SidebarMenuButton :tooltip="item.botonesWeb">
+              <component :is="item.icono" v-if="item.icono" />
+              <span>{{ item.botonesWeb }}</span>
               <ChevronRight class="ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90" />
             </SidebarMenuButton>
           </CollapsibleTrigger>
           <CollapsibleContent>
             <SidebarMenuSub>
-              <SidebarMenuSubItem v-for="subItem in item.items" :key="subItem.title">
+              <SidebarMenuSubItem v-for="subItem in item.children" :key="subItem.botonesWeb">
                 <SidebarMenuSubButton as-child>
-                  <a :href="subItem.url">
-                    <span>{{ subItem.title }}</span>
+                  <a :href="subItem.ruta">
+                    <span>{{ subItem.botonesWeb }}</span>
                   </a>
                 </SidebarMenuSubButton>
               </SidebarMenuSubItem>

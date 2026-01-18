@@ -9,6 +9,7 @@ const useSystem = () => {
         checkEmpresa: system().checkEmpresa,
         getEmpresas: system().getEmpresas,
         selectEmpresa: system().selectEmpresa,
+        getMenus: system().getMenus,
     };
 }
 
