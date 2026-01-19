@@ -64,7 +64,7 @@ export const system = defineStore("system", {
                     return
                 }
                 localStorage.setItem('x0-empresa', btoa(JSON.stringify(data[0])))
-                window.location.reload()
+                window.location.reload();
             } catch (err: any) {
                 toast.error(err?.response?.data.message)
             }
